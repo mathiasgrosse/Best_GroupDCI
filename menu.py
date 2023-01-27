@@ -18,4 +18,9 @@ while menu == True:
         current_time = datetime.datetime.now().time()
         Display_time = current_time.strftime("%H:%M:%S")
         print(Display_time)
+    # Time in Unix (Giulio)
     elif choice == "2":
+        tday = str(datetime.datetime.now())
+        tday = datetime.datetime.strptime(tday, "%Y-%m-%d %H:%M:%S.%f")
+        unix_time = datetime.datetime.timestamp(tday)
+        print(unix_time)
