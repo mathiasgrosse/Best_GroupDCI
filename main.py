@@ -1,22 +1,22 @@
-import os
-menu = True
-while menu == True:
-    print("(1) - #task")
-    print("(2) - #task")
-    print("(3) - #task")
-    print("(4) - #task")
-    print("(5) - #task")
-    print("(6) - #task")
-    print("(7) - #task")
-    print("(8) - #task")
-    choice = input("ENTER CHOICE: ")
+from datetime import datetime
+import calendar
 
-#############################   
-    if choice == "1":
-        print("hi")
+year = datetime.now() #int(input("Enter the year: ")) 
+year = int(year.strftime("%Y"))
 
+play = True
 
-
-############################      is able to display the current time
-    elif choice == "2":
-        print("there")
+while play:
+    #Checking if current year is a leap year
+    if calendar.isleap(year):
+        print(year,"is a leap year")
+        play = False
+    else:
+        print(year,"is not a leap year")
+        play = False
+    #Checking how much time until the next leap year left
+        next_leap_year = year
+        while calendar.isleap(next_leap_year) != True:
+            next_leap_year += 1
+        print(next_leap_year - year, "year(s) left until the next leap year")
+        
