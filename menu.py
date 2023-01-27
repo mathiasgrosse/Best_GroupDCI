@@ -62,11 +62,9 @@ while menu == True:
         "Did you hear about the guy who invented the knock knock joke? He won the 'no-bell' price", 
         "What´s red and bad for your teeth? A brick","What kind of tea is hard to swallow? Reality", "What´s the most terrifying word in nuclear physics? Oooops ",
         "Ebay is so useless. I tried to look up lighters and all they had were 13 765 matches"]
-        user = input("Press 1 to get a joke")
-
-        if user == "1":
-            print(random.randint(0,(jokes.__len__()-1)))
-            print(jokes[random.randint(0,(jokes.__len__()-1))])
+        
+         print(random.randint(0,(jokes.__len__()-1)))
+         print(jokes[random.randint(0,(jokes.__len__()-1))])
     
 
 
