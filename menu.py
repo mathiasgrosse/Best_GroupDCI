@@ -19,4 +19,3 @@ while menu == True:
         Display_time = current_time.strftime("%H:%M:%S")
         print(Display_time)
     elif choice == "2":
-        
