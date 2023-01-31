@@ -10,7 +10,7 @@ while menu == True:
     print("(2) - #Display Time in Unix")
     print("(3) - #Convert to a datetime datatype")
     print("(4) - #Checking if current year is a leap year and how much time until the next leap year left")
-    print("(5) - #output the delta in full, only seconds, only day, only years")
+    print("(5) - #Output the delta in full, only seconds, only day, only years")
     print("(6) - #Output a random joke")
     print("(7) - #Print a calendar")
     print("(8) - #Surprise feature: What's the time at the opposite side of the world?")
@@ -64,13 +64,15 @@ while menu == True:
     
     # calculate the time from today until a given date, outputs the delta(Ammara)
     elif choice == "5":
-        time_now = datetime.datetime.now()
-        past_date1 = time_now - timedelta(days=189)
-        print(past_date1)   
+        time = input("Do you want to go into the past or into the future? ").lower()
+        if time == "past":
+            time_now = datetime.datetime.now()
+            days = int(input("How many days do you want to go back in time? "))
+            past = time_now - timedelta(days)
 
-        # What day will it be after 180 days
-        future_date2 = time_now + timedelta(days=189)
-        print(future_date2)
+        elif time == "future":
+            days = int(input("How many days do you want to go forward in time? "))
+            future = time_now - timedelta(days)
 
         # What day would it have been 150 days ago
         past_date1 = time_now - timedelta(days=189)
