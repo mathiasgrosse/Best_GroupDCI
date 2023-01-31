@@ -13,10 +13,11 @@ while menu == True:
     print("(5) - #output the delta in full, only seconds, only day, only years")
     print("(6) - #Output a random joke")
     print("(7) - #Print a calendar")
-    print("(8) - #Exit")
+    print("(8) - #Surprise feature: What's the time at the opposite side of the world?")
+    print("(9) - #Exit")
 
     
-    choice = input("ENTER CHOICE(1-8):")
+    choice = input("ENTER CHOICE(1-9):")
 
     # Display time (Mathias)   
     if choice == "1":
@@ -91,6 +92,21 @@ while menu == True:
         year = int(input("Please, type one year (yyyy): "))
         month =  int(input("Please, type one month (mm): "))
         print(f"{calendar.month(year, month)}")
+   
+
     
+    #Surprise feature: What's the time at the opposite side of the world? (Mathias)
     elif choice == "8":
+        import pytz
+        current_time = datetime.datetime.now()
+        # convert current time to opposite timezone (12 hours difference)
+        opposite_time = current_time.astimezone(pytz.timezone('Etc/GMT-12'))
+        print(opposite_time.strftime("%Y-%m-%d , %H:%M:%S") , )
+
+
+    elif choice == "9":
         menu = False
+
+    else:
+        print("wrong input, try again")
+        wrong = input("Press ENTER to continue")
