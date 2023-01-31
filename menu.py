@@ -69,15 +69,13 @@ while menu == True:
             time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go back in time? "))
             past = time_now - timedelta(days)
+            print(past)
 
         elif time == "future":
             time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go forward in time? "))
             future = time_now + timedelta(days)
-
-        # What day would it have been 150 days ago
-        past_date1 = time_now - timedelta(days=189)
-        print(past_date1)  
+            print(future)    
         
     # Output a random jokes (Darlene)
     elif choice == "6":
