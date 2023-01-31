@@ -1,11 +1,12 @@
-import os
+from os import system
 import datetime
 import random
 import time
 from datetime import timedelta
 import calendar
-menu = True
-while menu == True:
+choice = ""
+while choice != "9":
+    system("clear")
     print("(1) - #Display Time")
     print("(2) - #Display Time in Unix")
     print("(3) - #Convert to a datetime datatype")
@@ -24,12 +25,15 @@ while menu == True:
         current_time = datetime.datetime.now().time()
         Display_time = current_time.strftime("%H:%M:%S")
         print(Display_time)
+        again = input("Press 'Enter' to continue:")
+            
     # Time in Unix (Giulio)
     elif choice == "2":
         tday = str(datetime.datetime.now())
         tday = datetime.datetime.strptime(tday, "%Y-%m-%d %H:%M:%S.%f")
         unix_time = datetime.datetime.timestamp(tday)
         print(unix_time)
+        again = input("Press 'Enter' to continue:")
     
     # import datetime (Spencer)    
     elif choice == "3":
@@ -40,6 +44,8 @@ while menu == True:
 
         # output datetime data type
         print(datetime.strptime(dateinput, "%d.%m.%Y"))
+        again = input("Press 'Enter' to continue:")
+
     
     # Kyrylo
     elif choice == "4":
@@ -61,6 +67,8 @@ while menu == True:
                 while calendar.isleap(next_leap_year) != True:
                     next_leap_year += 1
                     print(next_leap_year - year, "year(s) left until the next leap year")
+        again = input("Press 'Enter' to continue:")
+
     
     # calculate the time from today until a given date, outputs the delta(Ammara)
     elif choice == "5":
@@ -75,7 +83,9 @@ while menu == True:
             time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go forward in time? "))
             future = time_now + timedelta(days)
-            print(future)    
+            print(future)
+        again = input("Press 'Enter' to continue:")
+
         
     # Output a random jokes (Darlene)
     elif choice == "6":
@@ -86,12 +96,16 @@ while menu == True:
         
         print(random.randint(0,(jokes.__len__()-1)))
         print(jokes[random.randint(0,(jokes.__len__()-1))])
+        again = input("Press 'Enter' to continue:")
+
     
     # Print a chosen calendar (Yaroslav)
     elif choice == "7":
         year = int(input("Please, type one year (yyyy): "))
         month =  int(input("Please, type one month (mm): "))
         print(f"{calendar.month(year, month)}")
+        again = input("Press 'Enter' to continue:")
+
    
 
     
@@ -102,10 +116,11 @@ while menu == True:
         # convert current time to opposite timezone (12 hours difference)
         opposite_time = current_time.astimezone(pytz.timezone('Etc/GMT-12'))
         print(opposite_time.strftime("%Y-%m-%d , %H:%M:%S") , )
+        again = input("Press 'Enter' to continue:")
 
-
+    
     elif choice == "9":
-        menu = False
+        print("See you next time!")
 
     else:
         print("wrong input, try again")
