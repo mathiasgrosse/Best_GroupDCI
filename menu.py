@@ -73,7 +73,7 @@ while menu == True:
         elif time == "future":
             time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go forward in time? "))
-            future = time_now - timedelta(days)
+            future = time_now + timedelta(days)
 
         # What day would it have been 150 days ago
         past_date1 = time_now - timedelta(days=189)
