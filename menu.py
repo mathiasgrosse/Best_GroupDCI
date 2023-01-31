@@ -26,8 +26,8 @@ while menu == True:
         tday = datetime.datetime.strptime(tday, "%Y-%m-%d %H:%M:%S.%f")
         unix_time = datetime.datetime.timestamp(tday)
         print(unix_time)
+    # import datetime (Spencer)    
     elif choice == "3":
-        # import datetime (Spencer)
         from datetime import datetime
 
         # date input
