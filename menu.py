@@ -81,3 +81,7 @@ while menu == True:
         
         print(random.randint(0,(jokes.__len__()-1)))
         print(jokes[random.randint(0,(jokes.__len__()-1))])
+    elif choice == "7":
+        import calendar
+        print(calendar.month(2023,2))
+        
