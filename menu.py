@@ -44,7 +44,6 @@ while menu == True:
     # Kyrylo
     elif choice == "4":
         from datetime import datetime
-        import calendar
         year = datetime.now() #int(input("Enter the year: ")) 
         year = int(year.strftime("%Y"))
 
