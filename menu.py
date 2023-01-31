@@ -47,21 +47,21 @@ while choice != "9":
         again = input("Press 'Enter' to continue:")
 
     
-    # Output if input is a leap year (Kyrylo)
+    # Output if input is a leap year and how much time until the next one is left  (Kyrylo)
     elif choice == "4":
         year = datetime.datetime.now() #int(input("Enter the year: ")) 
         year = int(year.strftime("%Y"))
 
         play = True
         while play:
-    # Checking if current year is a leap year (Kyrylo)
+            # Leap year
             if calendar.isleap(year):
                 print(year,"is a leap year")
                 play = False
             else:
                 print(year,"is not a leap year")
                 play = False
-    # Checking how much time until the next leap year left (Kyrylo)
+                # How much time for the next one
                 next_leap_year = year
                 while calendar.isleap(next_leap_year) != True:
                     next_leap_year += 1
@@ -69,15 +69,17 @@ while choice != "9":
         again = input("Press 'Enter' to continue:")
 
     
-    # calculate the time from today until a given date, outputs the delta(Ammara)
+    # Calculate the time from today until a given date, outputs the delta (Ammara)
     elif choice == "5":
         time = input("Do you want to go into the past or into the future? ").lower()
+        # Past
         if time == "past":
             time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go back in time? "))
             past = time_now - timedelta(days)
             print(past)
 
+        # Future
         elif time == "future":
             time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go forward in time? "))
@@ -86,7 +88,7 @@ while choice != "9":
         again = input("Press 'Enter' to continue:")
 
         
-    # Output a random jokes (Darlene)
+    # Output a random joke (Darlene)
     elif choice == "6":
         jokes = ["What is Forrest Gump´s e-mail password? 1forrest1" , 
         "Did you hear about the guy who invented the knock knock joke? He won the 'no-bell' price", 
@@ -105,10 +107,7 @@ while choice != "9":
         print(f"{calendar.month(year, month)}")
         again = input("Press 'Enter' to continue:")
 
-   
-
-    
-    #Surprise feature: What's the time at the opposite side of the world? (Mathias)
+    # Surprise feature: What's the time at the opposite side of the world? (Mathias)
     elif choice == "8":
         current_time = datetime.datetime.now()
         # convert current time to opposite timezone (12 hours difference)
@@ -116,10 +115,11 @@ while choice != "9":
         print(opposite_time.strftime("%Y-%m-%d , %H:%M:%S") , )
         again = input("Press 'Enter' to continue:")
 
-    
+    # Exit
     elif choice == "9":
         print("See you next time!")
 
+    # Wrong input
     else:
         print("wrong input, try again")
         wrong = input("Press ENTER to continue")
