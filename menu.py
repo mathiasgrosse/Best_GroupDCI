@@ -1,6 +1,6 @@
 import os
 import datetime
-import datetime
+import random
 import time
 from datetime import timedelta
 menu = True
@@ -80,4 +80,4 @@ while menu == True:
         "Ebay is so useless. I tried to look up lighters and all they had were 13 765 matches"]
         
         print(random.randint(0,(jokes.__len__()-1)))
-        print(jokes[random.randint(0,(jokes.__len__()-1))])                 
+        print(jokes[random.randint(0,(jokes.__len__()-1))])
