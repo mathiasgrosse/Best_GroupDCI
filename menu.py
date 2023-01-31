@@ -18,7 +18,7 @@ while menu == True:
 
     
     choice = input("ENTER CHOICE(1-9):")
-
+    
     # Display time (Mathias)   
     if choice == "1":
         current_time = datetime.datetime.now().time()
@@ -71,6 +71,7 @@ while menu == True:
             past = time_now - timedelta(days)
 
         elif time == "future":
+            time_now = datetime.datetime.now()
             days = int(input("How many days do you want to go forward in time? "))
             future = time_now - timedelta(days)
 
