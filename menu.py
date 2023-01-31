@@ -24,3 +24,12 @@ while menu == True:
         tday = datetime.datetime.strptime(tday, "%Y-%m-%d %H:%M:%S.%f")
         unix_time = datetime.datetime.timestamp(tday)
         print(unix_time)
+    elif choice == "3":
+        # import datetime
+        from datetime import datetime
+
+        # date input
+        dateinput = input("Enter a Date (DD.MM.YYYY): ")
+
+        # output datetime data type
+        print(datetime.strptime(dateinput, "%d.%m.%Y"))
