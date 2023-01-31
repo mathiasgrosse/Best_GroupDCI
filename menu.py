@@ -89,7 +89,7 @@ while menu == True:
     # Print a chosen calendar (Yaroslav)
     elif choice == "7":
         year = int(input("Please, type one year (yyyy): "))
-        month =  int(input("Please, type one month): "))
+        month =  int(input("Please, type one month (mm): "))
         print(f"{calendar.month(year, month)}")
     
     elif choice == "8":
