@@ -1,13 +1,15 @@
 import os
 import datetime
-
+import datetime
+import time
+from datetime import timedelta
 menu = True
 while menu == True:
     print("(1) - #Display Time")
     print("(2) - #Display Time in Unix")
     print("(3) - #Convert to a datetime datatype")
     print("(4) - #Checking if current year is a leap year and how much time until the next leap year left")
-    print("(5) - #task")
+    print("(5) - #output the delta in full, only seconds, only day, only years")
     print("(6) - #task")
     print("(7) - #task")
     print("(8) - #task")
@@ -54,3 +56,17 @@ while menu == True:
                 while calendar.isleap(next_leap_year) != True:
                     next_leap_year += 1
                     print(next_leap_year - year, "year(s) left until the next leap year")
+ #######    calculate the time from today until a given date, outputs the delta(Ammara)
+ 
+    elif choice == "5":
+        time_now = datetime.datetime.now()
+        past_date1 = time_now - timedelta(days=189)
+        print(past_date1)   
+
+        # What day will it be after 180 days
+        future_date2 = time_now + timedelta(days=189)
+        print(future_date2)
+
+        # What day would it have been 150 days ago
+        past_date1 = time_now - timedelta(days=189)
+        print(past_date1)                   
