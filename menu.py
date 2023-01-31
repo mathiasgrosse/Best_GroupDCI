@@ -13,6 +13,8 @@ while menu == True:
     print("(5) - #output the delta in full, only seconds, only day, only years")
     print("(6) - #Output a random joke")
     print("(7) - #Print a calendar")
+    print("(8) - #Exit")
+
     
     choice = input("ENTER CHOICE(1-8):")
 
@@ -89,3 +91,6 @@ while menu == True:
         year = int(input("Please, type one year (yyyy): "))
         month =  int(input("Please, type one year (yyyy): "))
         print(f"{calendar.month(year, month)}")
+    
+    elif choice == "8":
+        menu = False
