@@ -3,6 +3,7 @@ import datetime
 import random
 import time
 from datetime import timedelta
+import calendar
 menu = True
 while menu == True:
     print("(1) - #Display Time")
@@ -10,9 +11,9 @@ while menu == True:
     print("(3) - #Convert to a datetime datatype")
     print("(4) - #Checking if current year is a leap year and how much time until the next leap year left")
     print("(5) - #output the delta in full, only seconds, only day, only years")
-    print("(6) - #task")
-    print("(7) - #task")
-    print("(8) - #task")
+    print("(6) - #Output a random joke")
+    print("(7) - #Print a calendar")
+    
     choice = input("ENTER CHOICE(1-8):")
 
     # Display time (Mathias)   
@@ -26,6 +27,7 @@ while menu == True:
         tday = datetime.datetime.strptime(tday, "%Y-%m-%d %H:%M:%S.%f")
         unix_time = datetime.datetime.timestamp(tday)
         print(unix_time)
+    
     # import datetime (Spencer)    
     elif choice == "3":
         from datetime import datetime
@@ -35,6 +37,7 @@ while menu == True:
 
         # output datetime data type
         print(datetime.strptime(dateinput, "%d.%m.%Y"))
+    
     # Kyrylo
     elif choice == "4":
         from datetime import datetime
@@ -56,8 +59,8 @@ while menu == True:
                 while calendar.isleap(next_leap_year) != True:
                     next_leap_year += 1
                     print(next_leap_year - year, "year(s) left until the next leap year")
- #######    calculate the time from today until a given date, outputs the delta(Ammara)
- 
+    
+    # calculate the time from today until a given date, outputs the delta(Ammara)
     elif choice == "5":
         time_now = datetime.datetime.now()
         past_date1 = time_now - timedelta(days=189)
@@ -71,8 +74,7 @@ while menu == True:
         past_date1 = time_now - timedelta(days=189)
         print(past_date1)  
         
-########	Output a random jokes (Darlene)
-
+    # Output a random jokes (Darlene)
     elif choice == "6":
         jokes = ["What is Forrest Gump´s e-mail password? 1forrest1" , 
         "Did you hear about the guy who invented the knock knock joke? He won the 'no-bell' price", 
@@ -81,7 +83,9 @@ while menu == True:
         
         print(random.randint(0,(jokes.__len__()-1)))
         print(jokes[random.randint(0,(jokes.__len__()-1))])
+    
+    # Print a chosen calendar (Yaroslav)
     elif choice == "7":
-        import calendar
-        print(calendar.month(2023,2))
-        
+        year = int(input("Please, type one year (yyyy): "))
+        month =  int(input("Please, type one year (yyyy): "))
+        print(f"{calendar.month(year, month)}")
