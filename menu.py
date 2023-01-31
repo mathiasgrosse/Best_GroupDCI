@@ -5,8 +5,8 @@ menu = True
 while menu == True:
     print("(1) - #Display Time")
     print("(2) - #Display Time in Unix")
-    print("(3) - #task")
-    print("(4) - #task")
+    print("(3) - #Convert to a datetime datatype")
+    print("(4) - #Checking if current year is a leap year and how much time until the next leap year left")
     print("(5) - #task")
     print("(6) - #task")
     print("(7) - #task")
@@ -25,7 +25,7 @@ while menu == True:
         unix_time = datetime.datetime.timestamp(tday)
         print(unix_time)
     elif choice == "3":
-        # import datetime
+        # import datetime (Spencer)
         from datetime import datetime
 
         # date input
@@ -33,3 +33,24 @@ while menu == True:
 
         # output datetime data type
         print(datetime.strptime(dateinput, "%d.%m.%Y"))
+    # Kyrylo
+    elif choice == "4":
+        from datetime import datetime
+        import calendar
+        year = datetime.now() #int(input("Enter the year: ")) 
+        year = int(year.strftime("%Y"))
+
+        play = True
+        while play:
+    # Checking if current year is a leap year (Kyrylo)
+            if calendar.isleap(year):
+                print(year,"is a leap year")
+                play = False
+            else:
+                print(year,"is not a leap year")
+                play = False
+    # Checking how much time until the next leap year left (Kyrylo)
+                next_leap_year = year
+                while calendar.isleap(next_leap_year) != True:
+                    next_leap_year += 1
+                    print(next_leap_year - year, "year(s) left until the next leap year")
