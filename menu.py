@@ -4,6 +4,8 @@ import random
 import time
 from datetime import timedelta
 import calendar
+import pytz
+
 choice = ""
 while choice != "9":
     system("clear")
@@ -35,10 +37,8 @@ while choice != "9":
         print(unix_time)
         again = input("Press 'Enter' to continue:")
     
-    # import datetime (Spencer)    
+    # Convert input to a datetime datatype (Spencer)    
     elif choice == "3":
-        
-
         # date input
         dateinput = input("Enter a Date (DD.MM.YYYY): ")
 
@@ -47,7 +47,7 @@ while choice != "9":
         again = input("Press 'Enter' to continue:")
 
     
-    # Kyrylo
+    # Output if input is a leap year (Kyrylo)
     elif choice == "4":
         year = datetime.datetime.now() #int(input("Enter the year: ")) 
         year = int(year.strftime("%Y"))
@@ -110,7 +110,6 @@ while choice != "9":
     
     #Surprise feature: What's the time at the opposite side of the world? (Mathias)
     elif choice == "8":
-        import pytz
         current_time = datetime.datetime.now()
         # convert current time to opposite timezone (12 hours difference)
         opposite_time = current_time.astimezone(pytz.timezone('Etc/GMT-12'))
