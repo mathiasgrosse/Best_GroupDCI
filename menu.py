@@ -37,20 +37,19 @@ while choice != "9":
     
     # import datetime (Spencer)    
     elif choice == "3":
-        from datetime import datetime
+        
 
         # date input
         dateinput = input("Enter a Date (DD.MM.YYYY): ")
 
         # output datetime data type
-        print(datetime.strptime(dateinput, "%d.%m.%Y"))
+        print(datetime.datetime.strptime(dateinput, "%d.%m.%Y"))
         again = input("Press 'Enter' to continue:")
 
     
     # Kyrylo
     elif choice == "4":
-        from datetime import datetime
-        year = datetime.now() #int(input("Enter the year: ")) 
+        year = datetime.datetime.now() #int(input("Enter the year: ")) 
         year = int(year.strftime("%Y"))
 
         play = True
